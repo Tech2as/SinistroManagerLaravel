@@ -22,4 +22,10 @@ class OficinaProfile extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    //Relacionamento com Sinistro
+    public function sinistros()
+    {
+        return $this->hasMany(Sinistro::class);
+    }
 }
