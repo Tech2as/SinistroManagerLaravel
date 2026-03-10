@@ -63,4 +63,11 @@ class User extends Authenticatable
     {
         return $this->hasOne(ReguladorProfile::class);
     }
+
+    //Relacionamento com o perfil da seguradora
+    public function seguradoraProfile(): HasOne
+    {
+        return $this->hasOne(SeguradoraProfile::class);
+
+    }
 }
