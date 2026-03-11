@@ -23,7 +23,7 @@ class UsersSeeder extends Seeder
 
     User::factory()->create([
         'name' => 'Oficina',
-        'email' => 'oficina@.com',
+        'email' => 'oficina@oficina.com',
         'password' => bcrypt('oficina'),
         'role' => 'oficina',
         'is_approved' => true,
@@ -31,7 +31,7 @@ class UsersSeeder extends Seeder
 
     User::factory()->create([
         'name' => 'Seguradora',
-        'email' => 'seguradora@.com',
+        'email' => 'seguradora@seguradora.com',
         'password' => bcrypt('seguradora'),
         'role' => 'seguradora',
         'is_approved' => true,
@@ -39,7 +39,7 @@ class UsersSeeder extends Seeder
 
     User::factory()->create([
         'name' => 'Regulador',
-        'email' => 'regulador@.com',
+        'email' => 'regulador@regulador.com',
         'password' => bcrypt('regulador'),
         'role' => 'regulador',
         'is_approved' => true,
@@ -47,7 +47,7 @@ class UsersSeeder extends Seeder
 
      User::factory()->create([
         'name' => 'Regulador2',
-        'email' => 'regulador2@.com',
+        'email' => 'regulador2@regulador.com',
         'password' => bcrypt('regulador'),
         'role' => 'regulador',
         'is_approved' => false,

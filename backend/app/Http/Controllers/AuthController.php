@@ -23,6 +23,12 @@ class AuthController extends Controller
             ], 401);
         }
 
+        if (!Auth::user()->is_approved) {
+            return response()->json([
+                'message' => 'Usuário não aprovado. Aguarde a aprovação do administrador.'
+            ], 403);
+        }
+
         $user = $request->user();
 
         $token = $user->createToken('auth_token')->plainTextToken;
