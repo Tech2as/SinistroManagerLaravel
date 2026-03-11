@@ -8,6 +8,8 @@ use App\Http\Controllers\AuthController;
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
+Route::post('/register', [AuthController::class, 'cadastro'])->name('register');
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth:sanctum');
 
 
