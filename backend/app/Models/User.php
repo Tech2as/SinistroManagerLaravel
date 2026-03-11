@@ -70,4 +70,10 @@ class User extends Authenticatable
         return $this->hasOne(SeguradoraProfile::class);
 
     }
+
+    //Relacionamento com a apólice
+    public function apolice(): HasOne
+    {
+        return $this->hasOne(Apolice::class);
+    }
 }
