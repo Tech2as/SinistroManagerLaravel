@@ -44,4 +44,27 @@ class AuthController extends Controller
         ]);
     
     }
+
+    public function cadastro(Request $request)
+    {
+        $credentials = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+            'role' => ['required', 'string', 'in:oficina,seguradora,regulador'],
+        ]);
+
+        $user = User::create([
+            'name' => $credentials['name'],
+            'email' => $credentials['email'],
+            'password' => bcrypt($credentials['password']),
+            'role' => $credentials['role'],
+            'is_approved' => false,
+        ]);
+
+        return response()->json([
+            'message' => 'Cadastro realizado com sucesso',
+            'user' => $user
+        ], 201);
+    }
 }
